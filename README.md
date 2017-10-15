@@ -1,1 +1,4 @@
-# imc_fe_infomation_arrangement
+# 信息排列效果
+
+即多行多列效果。
+
