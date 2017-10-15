@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>信息排列 - 卡片模式</title>
+    <title>信息排列 - js切换模式</title>
     <style type="text/css">
     * {
         margin: 0px;
@@ -88,22 +88,62 @@
         background-color: #ccc;
     }
 
-
+    .small {
+        height: 50px;
+        width: 50px;
+        display: block;
+        float: left;
+    }
 
     </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            // 获取按钮
+            var listBtn = document.getElementById('btn1');
+            var cardBtn = document.getElementById('btn2');
+            var imgs = document.getElementsByTagName('img');
+
+            console.log(listBtn, cardBtn)
+
+            listBtn.onclick = function() {
+                // 改变按钮的class的值
+                listBtn.className = "btn-list-on";
+                cardBtn.className = "btn-card-off"
+
+                // 改变每个图片的路径， 以及对应的父节点的值
+                for (var i = 0; i < imgs.length; i++) {
+                    imgs[i].src = './images/small.jpg';
+                    imgs[i].parentNode.className = 'a-img small';
+                }
+            }
+
+            cardBtn.onclick = function() {
+                // 改变按钮的class的值
+                listBtn.className = "btn-list-off";
+                cardBtn.className = "btn-card-on"
+
+                // 改变每个图片的路径， 以及对应的父节点的值
+                for (var i = 0; i < imgs.length; i++) {
+                    imgs[i].src = './images/big.jpg';
+                    imgs[i].parentNode.className = 'a-img';
+                }
+            }
+
+        }
+    </script>
 </head>
 
 <body>
     <div id="box">
         <div class="top">
-            <a href="#" title="卡片模式" class="btn-card-off"></a>
-            <a href="#" title="列表模式" class="btn-list-on"></a>
+            <a href="#" title="列表模式" id="btn1" class="btn-list-off"></a>
+            <a href="#" title="卡片模式" id="btn2" class="btn-card-on"></a>
         </div>
         <ul>
             <li>
                 <div class="con">
                     <a href="#" class="a-img">
-                        <img src="./images/small.jpg" alt="">
+                        <img src="./images/big.jpg" alt="">
                     </a>
                     <p>
                         <a href="#">白阳</a>
@@ -116,7 +156,7 @@
             <li>
                 <div class="con">
                     <a href="#" class="a-img">
-                        <img src="./images/small.jpg" alt="">
+                        <img src="./images/big.jpg" alt="">
                     </a>
                     <p>
                         <a href="#">白阳</a>
@@ -129,7 +169,7 @@
             <li>
                 <div class="con">
                     <a href="#" class="a-img">
-                        <img src="./images/small.jpg" alt="">
+                        <img src="./images/big.jpg" alt="">
                     </a>
                     <p>
                         <a href="#">白阳</a>
@@ -142,7 +182,7 @@
             <li>
                 <div class="con">
                     <a href="#" class="a-img">
-                        <img src="./images/small.jpg" alt="">
+                        <img src="./images/big.jpg" alt="">
                     </a>
                     <p>
                         <a href="#">白阳</a>
@@ -155,7 +195,7 @@
             <li>
                 <div class="con">
                     <a href="#" class="a-img">
-                        <img src="./images/small.jpg" alt="">
+                        <img src="./images/big.jpg" alt="">
                     </a>
                     <p>
                         <a href="#">白阳</a>
@@ -168,7 +208,7 @@
             <li>
                 <div class="con">
                     <a href="#" class="a-img">
-                        <img src="./images/small.jpg" alt="">
+                        <img src="./images/big.jpg" alt="">
                     </a>
                     <p>
                         <a href="#">白阳</a>
